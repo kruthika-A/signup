@@ -1,0 +1,30 @@
+<section id="section-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="coloumn">
+                <div  [formGroup]="user" class="wrapper">
+                    <div class="form-group">
+                        <label for="">username</label>
+                        <input formControlName="name" type="text">
+                        <div *ngIf="register['name'].invalid && (register['name'].dirty||register['name'].touched)">
+                            <div class="nameInput" *ngIf="register['name'].errors?.required">
+                                name is required
+                            </div>
+                        </div>
+                       </div>
+                       <div class="form-group">
+                        <label for="">Email</label>
+                        <input formControlName="email" type="text">
+                        <div *ngIf="register['email'].invalid && (register['email'].dirty||register['email'].touched)">
+                            <div class="nameInput" *ngIf="register['email'].errors?.required">
+                                email is required
+                            </div>
+                            <span class="nameInput" *ngIf="register['email'].errors?.['pattern']">Invalid email address format</span>
+                        </div>
+                    </div>
+                </div>
+                <button (click)="save()" >save</button>
+            </div>
+        </div>
+    </div>
+</section>
