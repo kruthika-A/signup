@@ -12,8 +12,19 @@ export class ServiceService {
   test(data: any) {
     console.log('sssssssssss', data,)
 
-   return this.http.post('http://localhost:3333/registration/login', data)
+   return this.http.post('http://localhost:3333/response/login', data)
+  }  
+  catch(data:any){
+    console.log('sssssssss',data);
+   return this.http.post('http://localhost:3333/response/login', data)
+  //  return this.http.post('http/localhost:3000/login'),data)
+    
   }
+  }
+  
+
+
 
   
-}
+
+

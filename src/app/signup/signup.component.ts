@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.user = new FormGroup({
       name: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required,Validators.pattern(
         '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,10}$'
       ),]),
@@ -34,15 +35,12 @@ export class SignupComponent implements OnInit {
     // this.appService.getAllusers().subscribe({username:this.userData,email:this.email})
     // console.log('sssss',this.userData,this.userVar,this.userBrw);
     console.log('ssss',this.user.value);
-    this.ServiceService.test(this.user.value).subscribe((res) => {
-      console.log('sssss', res)
+    this.ServiceService.test(this.user.value).subscribe((res) => {   
     })
      
   }
-
-
-
-
-
-
+  
 }
+
+
+
